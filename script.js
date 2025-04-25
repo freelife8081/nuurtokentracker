@@ -5,7 +5,7 @@ const result = document.getElementById("result");
 const networkStatus = document.getElementById("networkStatus");
 
 const sidraParams = {
-  chainId: "0x17D6D", // 97453 in hex
+  chainId: "97453",
   chainName: "Sidra Chain",
   nativeCurrency: {
     name: "Sidra",
