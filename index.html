@@ -1,73 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nuur Token Tracker</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      width: 100%;
-      padding: 20px;
-      background-color: #3e64ff;
-      color: white;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
-
-    .iframe-container {
-      width: 95%;
-      max-width: 1000px;
-      margin-top: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-    }
-
-    footer {
-      margin: 30px 0;
-      color: #555;
-      font-size: 0.9em;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuur Airdrop Checker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-
   <header>
-    <h1>Live Nuur Token Tracker</h1>
-    <p>View live transactions on Sidra Chain</p>
+    <img src="logo.png" alt="Nuur Logo" class="logo" />
+    <button id="connectBtn">Connect Wallet</button>
   </header>
 
-  <div class="iframe-container">
-    <iframe 
-      src="https://wild-small-request.glitch.me/" 
-      title="Noor Token Live Feed">
-    </iframe>
-  </div>
+  <main>
+    <h1 class="animated">Check Nuur Airdrop Eligibility</h1>
+    <p id="networkStatus">Switching to Sidra Chain...</p>
+    <button id="checkEligibilityBtn" disabled>Check Eligibility</button>
+    <p id="result"></p>
+  </main>
 
   <footer>
-    &copy; 2025 Nuur Network | Built for Sidra Chain
+    <section class="footer-section">
+      <h3>About Us</h3>
+      <p>Nuur is a decentralized community-driven project on the Sidra Chain. Our mission is to reward long-term holders through fair airdrops.</p>
+    </section>
+    <section class="footer-section">
+      <h3>Community</h3>
+      <a href="https://twitter.com/yourproject" target="_blank">Twitter</a>
+      <a href="https://t.me/yourproject" target="_blank">Telegram</a>
+    </section>
+    <section class="footer-section">
+      <h3>Donate Sidra</h3>
+      <p>0xYourDonationAddressHere</p>
+    </section>
   </footer>
-
 </body>
 </html>
