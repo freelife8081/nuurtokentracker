@@ -1,71 +1,174 @@
+/* General Body Styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  color: white;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
+/* Header Styles */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  background-color: #111;
+  align-items: center;
+  background-color: #282c34;
+  padding: 15px 30px;
 }
 
-.logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  animation: spin 6s linear infinite;
+header .logo {
+  width: 120px;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0); }
-  100% { transform: rotate(360deg); }
+#connectBtn {
+  background-color: #ff5733;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#connectBtn:hover {
+  background-color: #e14d2a;
+}
+
+/* Main Section Styles */
+main {
+  padding: 30px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1.animated {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 button {
-  padding: 0.6rem 1.2rem;
-  background: #ffd700;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
   border: none;
-  color: #111;
-  font-weight: bold;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-size: 1em;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }
 
 button:hover {
-  background: #ffbf00;
+  background-color: #218838;
 }
 
-.animated {
-  animation: pulse 2s infinite;
+#claimBtn {
+  background-color: #007bff;
 }
 
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.7; }
-  100% { opacity: 1; }
+#claimBtn:hover {
+  background-color: #0056b3;
 }
 
+/* Eligibility Section Styles */
+#eligibilityInstructions {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+#eligibilityInstructions h2 {
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+#eligibilityInstructions p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #495057;
+}
+
+#eligibilityInstructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+#eligibilityInstructions li {
+  background-color: #f1f1f1;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+#eligibilityResult {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#eligibilityResult h3 {
+  margin-bottom: 15px;
+}
+
+#eligibilityText {
+  font-size: 1.1em;
+  color: #28a745;
+}
+
+/* Footer Styles */
 footer {
-  background: #00000088;
-  padding: 2rem;
+  background-color: #343a40;
+  color: #fff;
+  padding: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
+  text-align: center;
 }
 
-.footer-section {
-  margin: 1rem;
+footer .footer-section {
+  width: 30%;
+  padding: 10px;
 }
 
-a {
-  display: block;
-  color: #ffd700;
-  margin-top: 0.5rem;
+footer h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 1.1em;
+}
+
+footer a {
+  color: #ffffff;
+  font-size: 1.1em;
   text-decoration: none;
+}
+
+footer a:hover {
+  color: #ff5733;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
