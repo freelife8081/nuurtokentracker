@@ -82,6 +82,6 @@ claimBtn.onclick = async () => {
     claimBtn.style.display = "none";
   } catch (err) {
     console.error("Claim failed", err);
-    result.textContent = "❌ Claim failed. You might have already claimed.";
+    result.textContent = "❌ Claim failed. You might have already claimed or you haven't purchased the token on the presale market";
   }
 };
