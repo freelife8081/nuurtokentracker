@@ -2,7 +2,6 @@ const connectBtn = document.getElementById("connectBtn");
 const checkBtn = document.getElementById("checkEligibilityBtn");
 const claimBtn = document.getElementById("claimBtn");
 const result = document.getElementById("result");
-const networkStatus = document.getElementById("networkStatus");
 
 const NUR_TOKEN_ADDRESS = "0x3f2C99C23eE666096d2cFda162A4bFBcC4AE8de8";
 const AIRDROP_CONTRACT_ADDRESS = "0x2B5dB4de40A5C6b6055F7a81764d02CD4c14F8eE";
@@ -20,10 +19,10 @@ connectBtn.onclick = async () => {
       signer = provider.getSigner();
       userAddress = await signer.getAddress();
       checkBtn.disabled = false;
-      networkStatus.textContent = "Connected to Sidra Chain.";
+      result.textContent = "✅ Connected to Sidra Chain.";
     } catch (err) {
       console.error(err);
-      networkStatus.textContent = "Connection failed.";
+      result.textContent = "❌ Connection failed.";
     }
   } else {
     alert("MetaMask not found!");
@@ -31,7 +30,7 @@ connectBtn.onclick = async () => {
 };
 
 checkBtn.onclick = async () => {
-  result.textContent = "Checking eligibility...";
+  result.textContent = "🔍 Checking eligibility...";
   claimBtn.style.display = "none";
 
   try {
@@ -55,16 +54,16 @@ checkBtn.onclick = async () => {
     }
 
     if (reward > 0) {
-      result.textContent = `You're eligible for ${reward} NUR!`;
+      result.textContent = `🎉 You're eligible for ${reward} NUR!`;
       claimBtn.style.display = "inline-block";
       claimBtn.setAttribute("data-reward", reward);
     } else {
-      result.textContent = "Sorry, you're not eligible for the airdrop.";
+      result.textContent = "⚠️ Sorry, you're not eligible for the airdrop.";
     }
 
   } catch (err) {
     console.error("Error checking eligibility", err);
-    result.textContent = "Error checking eligibility.";
+    result.textContent = "❌ Error checking eligibility.";
   }
 };
 
@@ -77,12 +76,12 @@ claimBtn.onclick = async () => {
     );
 
     const tx = await contract.claimAirdrop();
-    result.textContent = "Transaction sent. Waiting for confirmation...";
+    result.textContent = "⏳ Transaction sent. Waiting for confirmation...";
     await tx.wait();
-    result.textContent = "Airdrop successfully claimed!";
+    result.textContent = "✅ Airdrop successfully claimed!";
     claimBtn.style.display = "none";
   } catch (err) {
     console.error("Claim failed", err);
-    result.textContent = "Claim failed. You might have already claimed.";
+    result.textContent = "❌ Claim failed. You might have already claimed.";
   }
 };
