@@ -30,18 +30,6 @@ connectBtn.onclick = async () => {
     alert("MetaMask not found!");
   }
 };
-
-async function switchToSidra() {
-  try {
-    await ethereum.request({
-      method: "wallet_addEthereumChain",
-      params: [sidraParams],
-    });
-  } catch (err) {
-    console.error("Network switch failed", err);
-  }
-}
-
 checkBtn.onclick = async () => {
   result.textContent = "Checking eligibility...";
   claimBtn.style.display = "none";
