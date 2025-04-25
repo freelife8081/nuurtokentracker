@@ -19,7 +19,6 @@ connectBtn.onclick = async () => {
       provider = new ethers.providers.Web3Provider(window.ethereum);
       signer = provider.getSigner();
       userAddress = await signer.getAddress();
-      await switchToSidra();
       checkBtn.disabled = false;
       networkStatus.textContent = "Connected to Sidra Chain.";
     } catch (err) {
@@ -30,6 +29,7 @@ connectBtn.onclick = async () => {
     alert("MetaMask not found!");
   }
 };
+
 checkBtn.onclick = async () => {
   result.textContent = "Checking eligibility...";
   claimBtn.style.display = "none";
