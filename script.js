@@ -4,18 +4,6 @@ const claimBtn = document.getElementById("claimBtn");
 const result = document.getElementById("result");
 const networkStatus = document.getElementById("networkStatus");
 
-const sidraParams = {
-  chainId: "97453",
-  chainName: "Sidra Chain",
-  nativeCurrency: {
-    name: "Sidra",
-    symbol: "SDA",
-    decimals: 18,
-  },
-  rpcUrls: ["https://node.sidrachain.com"],
-  blockExplorerUrls: ["https://ledger.sidrachain.com"]
-};
-
 const NUR_TOKEN_ADDRESS = "0x3f2C99C23eE666096d2cFda162A4bFBcC4AE8de8";
 const AIRDROP_CONTRACT_ADDRESS = "0x2B5dB4de40A5C6b6055F7a81764d02CD4c14F8eE";
 const AIRDROP_ABI = [{"inputs":[{"internalType":"address","name":"_nurTokenAddress","type":"address"},{"internalType":"uint256","name":"_claimStartTime","type":"uint256"},{"internalType":"uint256","name":"_claimEndTime","type":"uint256"},{"internalType":"address","name":"_presaleContract","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"AirdropClaimed","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdrawn","type":"event"},{"inputs":[],"name":"claimAirdrop","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"claimEndTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"claimStartTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"hasClaimed","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"hasReceivedFromPresale","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"nurToken","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"presaleContract","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"user","type":"address"}],"name":"setReceivedFromPresale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawUnclaimed","outputs":[],"stateMutability":"nonpayable","type":"function"}];
